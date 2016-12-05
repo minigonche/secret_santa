@@ -1,6 +1,5 @@
 import web
-import mobius_transformations as mbt
-import numpy as np
+import user_handler as uh
 import time
 
 
@@ -14,17 +13,19 @@ render = web.template.render('templates/')
 
 class Index(object):
     def GET(self):
-        return render.index()
+        return render.index(mensaje = '')
 
 
     def POST(self):
         
-        form = web.input(nameradio="1")
+        form = web.input(nameradio="Temp", pwd = 'Temp')
         
-        print(form.nameradio)
-        
+        if(not uh.check_user(form.nameradio, form.pwd)):
+            return render.index(mensaje = '(La contrasena es incorrecta)')
+        else:    
+            return  render.respuesta(amigo=uh.give_secret_santa(form.nameradio))
 
-        return  render.respuesta(amigo=form.nameradio)
+        
      
 
 if __name__ == "__main__":

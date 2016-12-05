@@ -1,4 +1,4 @@
-
+$def with (mensaje)
 <html>
 
 <head>
@@ -26,7 +26,7 @@
         <div class="container">
           <div class="jumbotron" id = 'names' >
            <div class="radio">
-            <label style = "color:white;"><input type="radio" name="nameradio" value = 'Diego' >Diego Casabianca</label>
+            <label style = "color:white;"><input type="radio" name="nameradio" value = 'Diego' checked = 'checked' >Diego Casabianca</label>
            </div>
            <div class="radio">
             <label style = "color:white;"><input type="radio" name="nameradio" value = 'Marcela' >Marcela Casabianca</label>
@@ -53,8 +53,10 @@
             <label style = "color:white;"><input type="radio" name="nameradio" value = 'Felipe'>Felipe Gonzalez</label>
            </div>
            <div class="form-group">
-            <label style = "color:white;" for="usr">Contraseña:</label>
-            <input type="text" class="form-control" id="pwd">
+            <label style = "color:white;" for="usr">Contrasena:</label>
+            <input type="text" class="form-control" name = "pwd" id="pwd">
+            <h3><span class="label label-danger">$mensaje</span></h3>
+
           </div>
           <input type="submit" class="btn" value="Dar Amigo Secreto">
           </div>
