@@ -49,7 +49,7 @@ def load_restrictions():
 
 def check_user(user_id, pwd):
     users = load_user_pwd()
-    return users[user_id] == pwd
+    return users[user_id].upper() == pwd.upper()
     
 def give_secret_santa(user_id):
     secret = load_user_secret()
